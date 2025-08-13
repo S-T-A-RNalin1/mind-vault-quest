@@ -2,39 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cyberpunk Vault Design System - Dark theme with neon accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark cyberpunk background */
+    --background: 220 13% 6%;
+    --foreground: 120 100% 85%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card styling with subtle transparency */
+    --card: 220 13% 8%;
+    --card-foreground: 120 100% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover elements */
+    --popover: 220 13% 10%;
+    --popover-foreground: 120 100% 85%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary neon green theme */
+    --primary: 120 100% 50%;
+    --primary-foreground: 220 13% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary cyan accents */
+    --secondary: 180 100% 25%;
+    --secondary-foreground: 180 100% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted elements with darker tones */
+    --muted: 220 13% 15%;
+    --muted-foreground: 120 20% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors for highlights */
+    --accent: 180 100% 35%;
+    --accent-foreground: 220 13% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive/error states */
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 220 13% 6%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs with subtle glow */
+    --border: 120 100% 25%;
+    --input: 220 13% 12%;
+    --ring: 120 100% 50%;
+
+    /* Custom vault colors */
+    --vault-glow: 120 100% 50%;
+    --vault-secondary-glow: 180 100% 50%;
+    --vault-danger: 0 100% 50%;
+    --vault-warning: 45 100% 50%;
+    --vault-success: 120 100% 40%;
+    
+    /* Gradients */
+    --gradient-vault: linear-gradient(135deg, hsl(120 100% 25%), hsl(180 100% 25%));
+    --gradient-glow: linear-gradient(90deg, hsl(120 100% 50% / 0.3), hsl(180 100% 50% / 0.3));
+    --gradient-dark: linear-gradient(180deg, hsl(220 13% 8%), hsl(220 13% 4%));
+
+    /* Shadows with neon glow effects */
+    --shadow-vault: 0 0 20px hsl(120 100% 50% / 0.3);
+    --shadow-secondary: 0 0 20px hsl(180 100% 50% / 0.3);
+    --shadow-danger: 0 0 20px hsl(0 100% 50% / 0.3);
+    
+    /* Animations */
+    --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-pulse: pulse 2s infinite;
 
     --radius: 0.5rem;
 
@@ -100,6 +128,70 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+    background: linear-gradient(135deg, hsl(220 13% 6%), hsl(220 13% 4%));
+    min-height: 100vh;
   }
+}
+
+@layer components {
+  .vault-glow {
+    box-shadow: var(--shadow-vault);
+    transition: var(--transition-glow);
+  }
+  
+  .vault-glow:hover {
+    box-shadow: 0 0 30px hsl(120 100% 50% / 0.5);
+  }
+  
+  .secondary-glow {
+    box-shadow: var(--shadow-secondary);
+    transition: var(--transition-glow);
+  }
+  
+  .matrix-rain {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(120 100% 50% / 0.05) 50%,
+      transparent 100%
+    );
+    animation: matrix-fall 3s linear infinite;
+  }
+  
+  .terminal-text {
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .cyber-border {
+    border: 1px solid hsl(120 100% 25%);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, 
+      hsl(220 13% 8% / 0.8), 
+      hsl(220 13% 12% / 0.8)
+    );
+    backdrop-filter: blur(10px);
+  }
+  
+  .glitch-text {
+    animation: glitch 0.3s infinite;
+  }
+}
+
+@keyframes matrix-fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-1px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(120 100% 50% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(120 100% 50% / 0.6); }
 }
