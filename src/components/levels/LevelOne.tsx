@@ -15,7 +15,7 @@ export const LevelOne = ({ onComplete, onBack }: LevelOneProps) => {
   const [showHint, setShowHint] = useState(false);
 
   const handleSubmit = () => {
-    if (password.toLowerCase() === "hidden") {
+    if (password.toLowerCase() === "shadow") {
       toast.success("Correct! Level 1 completed!");
       onComplete();
     } else {
@@ -27,8 +27,8 @@ export const LevelOne = ({ onComplete, onBack }: LevelOneProps) => {
   const hiddenContent = Array.from({ length: 500 }, (_, i) => {
     if (i === 247) {
       return (
-        <div key={i} className="text-[2px] opacity-10 text-primary">
-          password: hidden
+        <div key={i} className="text-[6px] opacity-30 text-primary font-mono">
+          SHADOW
         </div>
       );
     }
