@@ -6,6 +6,13 @@ import { Lock, Unlock, Eye, FileText, Volume2, Image, Clock, Zap } from "lucide-
 import { LevelOne } from "./levels/LevelOne";
 import { LevelTwo } from "./levels/LevelTwo";
 import { LevelThree } from "./levels/LevelThree";
+import { LevelFour } from "./levels/LevelFour";
+import { LevelFive } from "./levels/LevelFive";
+import { LevelSix } from "./levels/LevelSix";
+import { LevelSeven } from "./levels/LevelSeven";
+import { LevelEight } from "./levels/LevelEight";
+import { LevelNine } from "./levels/LevelNine";
+import { LevelTen } from "./levels/LevelTen";
 
 interface Level {
   id: number;
