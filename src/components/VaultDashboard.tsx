@@ -156,6 +156,20 @@ export const VaultDashboard = () => {
         return <LevelTwo onComplete={() => handleLevelComplete(2)} onBack={() => setCurrentLevel(null)} />;
       case 3:
         return <LevelThree onComplete={() => handleLevelComplete(3)} onBack={() => setCurrentLevel(null)} />;
+      case 4:
+        return <LevelFour onComplete={() => handleLevelComplete(4)} onBack={() => setCurrentLevel(null)} />;
+      case 5:
+        return <LevelFive onComplete={() => handleLevelComplete(5)} onBack={() => setCurrentLevel(null)} />;
+      case 6:
+        return <LevelSix onComplete={() => handleLevelComplete(6)} onBack={() => setCurrentLevel(null)} />;
+      case 7:
+        return <LevelSeven onComplete={() => handleLevelComplete(7)} onBack={() => setCurrentLevel(null)} />;
+      case 8:
+        return <LevelEight onComplete={() => handleLevelComplete(8)} onBack={() => setCurrentLevel(null)} />;
+      case 9:
+        return <LevelNine onComplete={() => handleLevelComplete(9)} onBack={() => setCurrentLevel(null)} />;
+      case 10:
+        return <LevelTen onComplete={() => handleLevelComplete(10)} onBack={() => setCurrentLevel(null)} />;
       default:
         return (
           <div className="min-h-screen flex items-center justify-center">
