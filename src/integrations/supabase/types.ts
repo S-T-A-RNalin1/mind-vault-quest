@@ -14,13 +14,50 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leaderboard: {
+        Row: {
+          completed_at: string
+          completion_time: number
+          created_at: string
+          id: string
+          level_id: number
+          player_name: string
+          session_id: string
+        }
+        Insert: {
+          completed_at?: string
+          completion_time: number
+          created_at?: string
+          id?: string
+          level_id: number
+          player_name: string
+          session_id?: string
+        }
+        Update: {
+          completed_at?: string
+          completion_time?: number
+          created_at?: string
+          id?: string
+          level_id?: number
+          player_name?: string
+          session_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_level_leaderboard: {
+        Args: { level_num: number; limit_count?: number }
+        Returns: {
+          completed_at: string
+          completion_time: number
+          id: string
+          player_name: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
