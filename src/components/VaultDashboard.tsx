@@ -13,6 +13,7 @@ import { LevelSeven } from "./levels/LevelSeven";
 import { LevelEight } from "./levels/LevelEight";
 import { LevelNine } from "./levels/LevelNine";
 import { LevelTen } from "./levels/LevelTen";
+import { LevelContainer } from "@/components/LevelContainer";
 
 interface Level {
   id: number;
@@ -151,25 +152,65 @@ export const VaultDashboard = () => {
 
     switch (currentLevel) {
       case 1:
-        return <LevelOne onComplete={() => handleLevelComplete(1)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={1} onComplete={() => handleLevelComplete(1)} onBack={() => setCurrentLevel(null)}>
+            <LevelOne onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 2:
-        return <LevelTwo onComplete={() => handleLevelComplete(2)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={2} onComplete={() => handleLevelComplete(2)} onBack={() => setCurrentLevel(null)}>
+            <LevelTwo onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 3:
-        return <LevelThree onComplete={() => handleLevelComplete(3)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={3} onComplete={() => handleLevelComplete(3)} onBack={() => setCurrentLevel(null)}>
+            <LevelThree onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 4:
-        return <LevelFour onComplete={() => handleLevelComplete(4)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={4} onComplete={() => handleLevelComplete(4)} onBack={() => setCurrentLevel(null)}>
+            <LevelFour onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 5:
-        return <LevelFive onComplete={() => handleLevelComplete(5)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={5} onComplete={() => handleLevelComplete(5)} onBack={() => setCurrentLevel(null)}>
+            <LevelFive onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 6:
-        return <LevelSix onComplete={() => handleLevelComplete(6)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={6} onComplete={() => handleLevelComplete(6)} onBack={() => setCurrentLevel(null)}>
+            <LevelSix onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 7:
-        return <LevelSeven onComplete={() => handleLevelComplete(7)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={7} onComplete={() => handleLevelComplete(7)} onBack={() => setCurrentLevel(null)}>
+            <LevelSeven onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 8:
-        return <LevelEight onComplete={() => handleLevelComplete(8)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={8} onComplete={() => handleLevelComplete(8)} onBack={() => setCurrentLevel(null)}>
+            <LevelEight onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 9:
-        return <LevelNine onComplete={() => handleLevelComplete(9)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={9} onComplete={() => handleLevelComplete(9)} onBack={() => setCurrentLevel(null)}>
+            <LevelNine onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       case 10:
-        return <LevelTen onComplete={() => handleLevelComplete(10)} onBack={() => setCurrentLevel(null)} />;
+        return (
+          <LevelContainer levelId={10} onComplete={() => handleLevelComplete(10)} onBack={() => setCurrentLevel(null)}>
+            <LevelTen onComplete={() => {}} onBack={() => setCurrentLevel(null)} />
+          </LevelContainer>
+        );
       default:
         return (
           <div className="min-h-screen flex items-center justify-center">
